@@ -28,11 +28,7 @@ O programa captura apenas a caixa de texto do jogo, aplica OCR local para reconh
 
 ## 🛠️ Instalação
 
-1. **Clone ou baixe este repositório:**
-   ```bash
-   git clone https://github.com/seu-usuario/screen-translator.git
-   cd screen-translator
-   ```
+1. **Clone ou baixe este repositório**
 
 2. **Crie e ative um ambiente virtual (recomendado):**
    ```bash
@@ -42,7 +38,7 @@ O programa captura apenas a caixa de texto do jogo, aplica OCR local para reconh
 
 3. **Instale as dependências:**
    ```bash
-   pip install mss numpy rapidocr_onnxruntime argostranslate keyboard
+   pip install -r requirements.txt
    ```
 
 > **Nota:** Na primeira execução, o programa baixará automaticamente o modelo de tradução de Inglês para Português (~150 MB). Aguarde alguns instantes até que o modelo seja carregado na memória.
@@ -55,7 +51,7 @@ O programa captura apenas a caixa de texto do jogo, aplica OCR local para reconh
    ```bash
    python tradutor_tela.py
    ```
-2. Abra o seu jogo em modo janela.
+2. Abra o seu jogo em modo janela ou tela cheia sem borda.
 3. Pressione **`F9`** (ou clique no botão **"Selecionar área"** do painel de controle).
 4. Clique e arraste um retângulo vermelho sobre a **caixa de texto do jogo**.
 5. Pronto! A tradução aparecerá automaticamente sobreposta à caixa de texto.
@@ -87,23 +83,13 @@ OPACIDADE = 0.97          # Opacidade da janela overlay (0.1 a 1.0)
 # --------------------------------------------------------------------------
 ```
 
-### 💡 Fundo Transparente ou Semi-Transparente
-
-- **Para fundo 100% transparente (somente texto sobre o jogo):**
-  Certifique-se de que a linha abaixo esteja ativa no método `criar_overlay`:
-  ```python
-  w.attributes("-transparentcolor", COR_FUNDO)
-  ```
-- **Para fundo com cor sólida/semi-transparente:**
-  Comente a linha do `-transparentcolor` e ajuste a constante `OPACIDADE` conforme desejado.
-
----
 
 ## 🧩 Estrutura do Projeto
 
 ```text
 ├── tradutor_tela.py   # Script principal do tradutor e interface gráfica
 ├── regiao.json        # Arquivo gerado automaticamente com a última área demarcada
+├── requirements.txt   # Dependências do projeto (RapidOCR, ArgosTranslate, MSS, etc.)
 └── README.md          # Documentação do projeto
 ```
 
@@ -112,3 +98,6 @@ OPACIDADE = 0.97          # Opacidade da janela overlay (0.1 a 1.0)
 ## 🛡️ Licença
 
 Este projeto é de código aberto e distribuído para fins educacionais e de entretenimento. Sinta-se à vontade para modificar e contribuir!
+
+## 🛠️ Desenvolvimento e Créditos
+Projeto concebido, arquitetado e revisado por **Noah Dias**, utilizando assistentes de IA no desenvolvimento e prototipagem de código.
